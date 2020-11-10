@@ -14,8 +14,8 @@ The real relevance of the project is scaling Machine Learning by using Big Data 
 The job is deep dive analysis the data, by cleaning, creating relevant features, create pipeline to have best Churn prediction model
 
 
-# Required library
-- Python 3.
+# Required libraries
+- Python 3
 - PySpark ML
 - Jupyter
 
@@ -38,7 +38,13 @@ Finaly I tune a random forest in stacked data and get approximatively  f1-score 
 
 Considering this is only a quit mini dataset and our purpose is scaling this up to the total 12G dataset, so, the random forest is the best model from now on in this project.
 
-Please check  [my blog post](https://medium.com/p/e8d57c27f879/edit) to get more details 
-References
+Here is  medium [blog post](https://medium.com/p/e8d57c27f879/edit)
 
-Dataset provided by Udacity.
+# Aknowledegments
+Thanks to Udacity for providing data and making learn funny. This project help to go deep dive big data tool spark  for machine learning.
+# References
+[smote](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)<br>
+[smotepyspark](https://medium.com/@haoyunlai/smote-implementation-in-pyspark-76ec4ffa2f1d)<br>
+[pysparkml](https://spark.apache.org/docs/2.2.0/ml-features.html)
+
+
