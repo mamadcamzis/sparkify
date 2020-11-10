@@ -1,34 +1,40 @@
-# sparkify
-Sparkify is a digital music service similar to Netease Cloud Music or QQ Music. Many of the users stream their favorite songs in Sparkify service everyday, either using free tier that places advertisements in between the songs, or using the premium subscription model where they stream music as free, but pay a monthly flat rate. User can upgrade, downgrade or cancel their service at anytime.
+# Sparkify User Churn prediction
 
-This is a Customer Churn Prediction Problem  
 
-So, our job is deep mining the customers' data and implement appropriate model to predict customer churn as follow steps:
+***Sparkify — Digital Music Service***
 
-- Clean data: fill the nan values , correct the data types, drop the outliers.
-- EDA: exploratory data to look features' distributions and correlation with key label (churn).
-- Feature engineering: extract and found customer-features and customer-behavior-features; Implement standscaler on numerical features.
-- Train and measure models: I choose logistic regression, decision tree and random forest classifier  and gradient boosting to train a baseline model and tuning a better model from best of them. It is worth mentioning that this data is unbalanced because of less churn customers, so we choose f1 score as a metrics to measure models' performance.
+Sparkify is a music streaming like (Spotify and Deezer). Users can listen music for free or paid.
+They can upgrade from free to to paid user or the inverse meaning downgrad paid to free. They also can 
+cancel subscription at any time
 
-Installation
-- Python 3.7
+I analyze user churn behaviour and create features and churn label.
+Finaly I create machine learning pipeline to predict churn.
+The real relevance of the project is scaling Machine Learning by using Big Data technology like Spark.
+
+The job is deep dive analysis the data, by cleaning, creating relevant features, create pipeline to have best Churn prediction model
+
+
+# Required library
+- Python 3.
 - PySpark ML
 - Jupyter
 
-Results
+# Data modeling
 
-The baseline of four machine learning methods: Logistic Regression, Decision Tree Classifier, Random Forest and Gradient Boosting Classifier.
+ ## Imbalanced data
+ Most machine learning algorithms ignore unbalanced data and have poor performance.
+ To address this problem there is some technique such as, Oversampling, Undersampling or an hybrid approach.
+ We also have **SMOTE** sampling which is a Data augmentation for the minority class.
+ ## Baseline model
+ I train four classification model: Logistic Regression, Decision tree, Random Forest and Gradient boosting and  compare their performance.
+ Thought Gradient boosting give best **f1-score** but take a long trainning time. I decided to take Decision tree and Logistic regression  as baseline
+ model because they  both have reasonnable training time and seem to have better **f1-score** after tunning parameters 
 
-
-
-Though the Gradient boosting  spent more training time, but it can get the highest f1 score 0.702. And the LogisticRegression has a medium training time and f1 score, maybe I can tuning it to get a higher score. So I'll choose Decision tree  and LogisticRegression to tuning, and the result is as follows:
-
-
-|  Model Name       |	F1-score 	| Training Time(s) |
-|-------------------|-----------|------------------|
-| LogisticRegression|  0.627 	  | 435.117          |
-|                   |           |                  |
-| Decision Tree 	  |  0.662 	  | 289.801          | 
+## Stacking Model
+After tuning baseline, I create new dataset by stacking prediction from baseline.
+New features are the predicted probability. I stacke them an create a new Vector Assembler
+## Final Model
+Finaly I tune a random forest in stacked data and get approximatively  f1-score of 0.7
 
 Considering this is only a quit mini dataset and our purpose is scaling this up to the total 12G dataset, so, the random forest is the best model from now on in this project.
 
