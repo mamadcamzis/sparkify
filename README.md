@@ -38,7 +38,7 @@ Finaly I tune a random forest in stacked data and get approximatively  f1-score 
 
 Considering this is only a quit mini dataset and our purpose is scaling this up to the total 12G dataset, so, the random forest is the best model from now on in this project.
 
-Here is  medium [blog post](https://medium.com/p/e8d57c27f879/edit)
+Here is  my medium [blog post](https://medium.com/p/e8d57c27f879/edit)
 
 # Aknowledegments
 Thanks to Udacity for providing data and making learn funny. This project help to go deep dive big data tool spark  for machine learning.
