@@ -16,6 +16,9 @@
 # Generated files
 .idea/**/contentModel.xml
 
+#icloud data (mac)
+data/*.icloud
+
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
